@@ -1,0 +1,437 @@
+Message-ID: <42e21d1ffc184d5bfef9d1e76d4d43b2@localhost>
+Date: Thu, 18 Nov 2021 10:33:53 +0700
+Subject: Database errors at example.com
+From: log@example.com
+To: admin@example.com, developer@example.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+2021-11-18 10:33:53
+[::1][2][j1velb12d2ft30t3ojhef5fvjj][error][yii\db\In=
+tegrityException]
+PDOException: SQLSTATE[23000]: Integrity constraint vio=
+lation: 1052
+Column 'status' in where clause is ambiguous in
+C:\xampp\h=
+tdocs\banking\vendor\yiisoft\yii2\db\Command.php:1299
+Stack trace:
+#0 C=
+:\xampp\htdocs\banking\vendor\yiisoft\yii2\db\Command.php(1299):
+PDOState=
+ment->execute()
+#1 C:\xampp\htdocs\banking\vendor\yiisoft\yii2\db\Command=
+.php(1165):
+yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 C:=
+\xampp\htdocs\banking\vendor\yiisoft\yii2\db\Command.php(433):
+yii\db\Com=
+mand->queryInternal('fetchColumn', 0)
+#3 C:\xampp\htdocs\banking\vendor\y=
+iisoft\yii2\db\Query.php(494):
+yii\db\Command->queryScalar()
+#4
+C:\xa=
+mpp\htdocs\banking\vendor\yiisoft\yii2\db\ActiveQuery.php(352):
+yii\db\Qu=
+ery->queryScalar('COUNT(*)', Object(yii\db\Connection))
+#5 C:\xampp\htdoc=
+s\banking\vendor\yiisoft\yii2\db\Query.php(366):
+yii\db\ActiveQuery->quer=
+yScalar('COUNT(*)', Object(yii\db\Connection))
+#6
+C:\xampp\htdocs\banki=
+ng\vendor\yiisoft\yii2\data\ActiveDataProvider.php(169):
+yii\db\Query->co=
+unt('*', NULL)
+#7
+C:\xampp\htdocs\banking\vendor\yiisoft\yii2\data\Base=
+DataProvider.php(169):
+yii\data\ActiveDataProvider->prepareTotalCount()=
+
+#8
+C:\xampp\htdocs\banking\vendor\kartik-v\yii2-grid\src\GridView.php(=
+1855):
+yii\data\BaseDataProvider->getTotalCount()
+#9
+C:\xampp\htdocs\=
+banking\vendor\kartik-v\yii2-grid\src\GridView.php(1184):
+kartik\grid\Gri=
+dView->initToggleData()
+#10 C:\xampp\htdocs\banking\vendor\yiisoft\yii2\b=
+ase\Widget.php(141):
+kartik\grid\GridView->run()
+#11 C:\xampp\htdocs\ba=
+nking\backend\views\menu-navigasi\index.php(47):
+yii\base\Widget::widget(=
+Array)
+#12 C:\xampp\htdocs\banking\vendor\yiisoft\yii2\base\View.php(348)=
+:
+require('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\banking\vendor\yi=
+isoft\yii2\base\View.php(257):
+yii\base\View->renderPhpFile('C:\\xampp\\h=
+tdocs...', '[<span
+class=3D"s...')
+#14 C:\xampp\htdocs\banking\vendor\y=
+iisoft\yii2\base\View.php(156):
+yii\base\View->renderFile('C:\\xampp\\htd=
+ocs...', Array,
+Object(backend\controllers\MenuNavigasiController))
+#15=
+
+C:\xampp\htdocs\banking\vendor\yiisoft\yii2\base\Controller.php(410):
+=
+yii\base\View->render('index', Array,
+Object(backend\controllers\MenuNavi=
+gasiController))
+#16
+C:\xampp\htdocs\banking\backend\controllers\MenuNa=
+vigasiController.php(56):
+yii\base\Controller->render('index', Array)
+#=
+17 [internal function]:
+backend\controllers\MenuNavigasiController->actio=
+nIndex()
+#18
+C:\xampp\htdocs\banking\vendor\yiisoft\yii2\base\InlineAct=
+ion.php(57):
+call_user_func_array(Array, Array)
+#19
+C:\xampp\htdocs\b=
+anking\vendor\yiisoft\yii2\base\Controller.php(181):
+yii\base\InlineActio=
+n->runWithParams(Array)
+#20 C:\xampp\htdocs\banking\vendor\yiisoft\yii2\b=
+ase\Module.php(528):
+yii\base\Controller->runAction('', Array)
+#21
+C:=
+\xampp\htdocs\banking\vendor\yiisoft\yii2\web\Application.php(104):
+yii\b=
+ase\Module->runAction('menu-navigasi', Array)
+#22
+C:\xampp\htdocs\banki=
+ng\vendor\yiisoft\yii2\base\Application.php(392):
+yii\web\Application->ha=
+ndleRequest(Object(yii\web\Request))
+#23 C:\xampp\htdocs\banking\backend\=
+web\index.php(23):
+yii\base\Application->run()
+#24 {main}
+
+Next yii=
+\db\IntegrityException: SQLSTATE[23000]: Integrity constraint
+violation: =
+1052 Column 'status' in where clause is ambiguous
+The SQL being executed =
+was: SELECT COUNT(*) FROM `menu_navigasi` LEFT
+JOIN `menu_navigasi` `b` O=
+N menu_navigasi.id_parent =3D b.id_menu WHERE
+(`menu_navigasi`.`id_parent=
+`=3D0) AND (`status`=3D'0') AND
+(`menu_navigasi`.`nama_menu` LIKE '%bank%=
+') in
+C:\xampp\htdocs\banking\vendor\yiisoft\yii2\db\Schema.php:678
+Sta=
+ck trace:
+#0 C:\xampp\htdocs\banking\vendor\yiisoft\yii2\db\Command.php(1=
+304):
+yii\db\Schema->convertException(Object(PDOException), 'SELECT
+COU=
+NT(*)...')
+#1 C:\xampp\htdocs\banking\vendor\yiisoft\yii2\db\Command.php(=
+1165):
+yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 C:\xamp=
+p\htdocs\banking\vendor\yiisoft\yii2\db\Command.php(433):
+yii\db\Command-=
+>queryInternal('fetchColumn', 0)
+#3 C:\xampp\htdocs\banking\vendor\yiisof=
+t\yii2\db\Query.php(494):
+yii\db\Command->queryScalar()
+#4
+C:\xampp\h=
+tdocs\banking\vendor\yiisoft\yii2\db\ActiveQuery.php(352):
+yii\db\Query->=
+queryScalar('COUNT(*)', Object(yii\db\Connection))
+#5 C:\xampp\htdocs\ban=
+king\vendor\yiisoft\yii2\db\Query.php(366):
+yii\db\ActiveQuery->queryScal=
+ar('COUNT(*)', Object(yii\db\Connection))
+#6
+C:\xampp\htdocs\banking\ve=
+ndor\yiisoft\yii2\data\ActiveDataProvider.php(169):
+yii\db\Query->count('=
+*', NULL)
+#7
+C:\xampp\htdocs\banking\vendor\yiisoft\yii2\data\BaseDataP=
+rovider.php(169):
+yii\data\ActiveDataProvider->prepareTotalCount()
+#8=
+
+C:\xampp\htdocs\banking\vendor\kartik-v\yii2-grid\src\GridView.php(1855)=
+:
+yii\data\BaseDataProvider->getTotalCount()
+#9
+C:\xampp\htdocs\banki=
+ng\vendor\kartik-v\yii2-grid\src\GridView.php(1184):
+kartik\grid\GridView=
+->initToggleData()
+#10 C:\xampp\htdocs\banking\vendor\yiisoft\yii2\base\W=
+idget.php(141):
+kartik\grid\GridView->run()
+#11 C:\xampp\htdocs\banking=
+\backend\views\menu-navigasi\index.php(47):
+yii\base\Widget::widget(Array=
+)
+#12 C:\xampp\htdocs\banking\vendor\yiisoft\yii2\base\View.php(348):
+r=
+equire('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\banking\vendor\yiisoft=
+\yii2\base\View.php(257):
+yii\base\View->renderPhpFile('C:\\xampp\\htdocs=
+...', '[<span
+class=3D"s...')
+#14 C:\xampp\htdocs\banking\vendor\yiisof=
+t\yii2\base\View.php(156):
+yii\base\View->renderFile('C:\\xampp\\htdocs..=
+.', Array,
+Object(backend\controllers\MenuNavigasiController))
+#15
+C:=
+\xampp\htdocs\banking\vendor\yiisoft\yii2\base\Controller.php(410):
+yii\b=
+ase\View->render('index', Array,
+Object(backend\controllers\MenuNavigasiC=
+ontroller))
+#16
+C:\xampp\htdocs\banking\backend\controllers\MenuNavigas=
+iController.php(56):
+yii\base\Controller->render('index', Array)
+#17 [i=
+nternal function]:
+backend\controllers\MenuNavigasiController->actionInde=
+x()
+#18
+C:\xampp\htdocs\banking\vendor\yiisoft\yii2\base\InlineAction.p=
+hp(57):
+call_user_func_array(Array, Array)
+#19
+C:\xampp\htdocs\bankin=
+g\vendor\yiisoft\yii2\base\Controller.php(181):
+yii\base\InlineAction->ru=
+nWithParams(Array)
+#20 C:\xampp\htdocs\banking\vendor\yiisoft\yii2\base\M=
+odule.php(528):
+yii\base\Controller->runAction('', Array)
+#21
+C:\xamp=
+p\htdocs\banking\vendor\yiisoft\yii2\web\Application.php(104):
+yii\base\M=
+odule->runAction('menu-navigasi', Array)
+#22
+C:\xampp\htdocs\banking\ve=
+ndor\yiisoft\yii2\base\Application.php(392):
+yii\web\Application->handleR=
+equest(Object(yii\web\Request))
+#23 C:\xampp\htdocs\banking\backend\web\i=
+ndex.php(23):
+yii\base\Application->run()
+#24 {main}
+Additional Information:
+Array
+(
+    [0] =3D> 23000
+    [1] =3D> 1052
+    [2] =3D> Column 's=
+tatus' in where clause is ambiguous
+)
+
+2021-11-18 10:33:53
+[::1][2]=
+[j1velb12d2ft30t3ojhef5fvjj][info][application] $_GET =3D [
+    'MenuNavi=
+gasiSearch' =3D> [
+        'nama_menu' =3D> 'bank'
+        'url' =3D> '=
+'
+        'no_urut' =3D> ''
+        'icon' =3D> ''
+        'status' =
+=3D> '0'
+    ]
+    'r' =3D> 'menu-navigasi'
+]
+
+$_POST =3D []
+=
+
+$_FILES =3D []
+
+$_COOKIE =3D [
+    '_identity-backend' =3D>
+'98d=
+6c9df3948d1468a8904a0d8cdd7fd26524192d065c4e39451687c829c40d0a:2:{i:0;s:17:=
+\"_identity-backend\";i:1;s:46:\"[1,\"RFzKABj8mwjU92eSYfjb6AXmJHPGrh7z\",25=
+92000]\";}'
+    '_identity' =3D>
+'256ff3f8018fcd34a52434126e0c82469da48=
+ff68d01216cec01f7ca7f9d4d98a:2:{i:0;s:9:\"_identity\";i:1;s:28:\"[\"100\",\=
+"test100key\",2592000]\";}'
+    'advanced-backend' =3D> 'j1velb12d2ft30t3=
+ojhef5fvjj'
+    '_csrf-backend' =3D>
+'5445cddf62a9aa3174d16e2bc69767b91=
+9ba40ed5718953526bc876d5a12a824a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"q=
+-y_cOy02l9xSgx7VzyYPPaNySXX3wXF\";}'
+    'PHPSESSID' =3D> 'sa82gtbsdhdlp0=
+s1femc7ip6th'
+]
+
+$_SESSION =3D [
+    '__flash' =3D> []
+    'user_=
+role' =3D> [
+        0 =3D> 'DEVELOPER'
+    ]
+    'user_role_id' =3D>=
+ [
+        0 =3D> 2
+    ]
+    '__id' =3D> 2
+]
+
+$_SERVER =3D [=
+
+    'MIBDIRS' =3D> 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' =3D> '\=
+\xampp\\mysql\\bin'
+    'OPENSSL_CONF' =3D> 'C:/xampp/apache/bin/openssl.=
+cnf'
+    'PHP_PEAR_SYSCONF_DIR' =3D> '\\xampp\\php'
+    'PHPRC' =3D> '\=
+\xampp\\php'
+    'TMP' =3D> '\\xampp\\tmp'
+    'HTTP_HOST' =3D> 'localh=
+ost'
+    'HTTP_CONNECTION' =3D> 'keep-alive'
+    'HTTP_SEC_CH_UA' =3D> =
+'\" Not A;Brand\";v=3D\"99\",
+\"Chromium\";v=3D\"96\", \"Google Chrome\";=
+v=3D\"96\"'
+    'HTTP_SEC_CH_UA_MOBILE' =3D> '?0'
+    'HTTP_SEC_CH_UA_P=
+LATFORM' =3D> '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' =3D> '1'=
+
+    'HTTP_USER_AGENT' =3D> 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+=
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45
+Safari/537.36'=
+
+    'HTTP_ACCEPT' =3D>
+'text/html,application/xhtml+xml,application/xm=
+l;q=3D0.9,image/avif,image/webp,image/apng,*/*;q=3D0.8,application/signed-e=
+xchange;v=3Db3;q=3D0.9'
+    'HTTP_SEC_FETCH_SITE' =3D> 'same-origin'
+  =
+  'HTTP_SEC_FETCH_MODE' =3D> 'navigate'
+    'HTTP_SEC_FETCH_USER' =3D> '?=
+1'
+    'HTTP_SEC_FETCH_DEST' =3D> 'document'
+    'HTTP_REFERER' =3D>
+=
+'http://localhost/banking/backend/web/index.php?r=3Dmenu-navigasi'
+    'H=
+TTP_ACCEPT_ENCODING' =3D> 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' =
+=3D> 'en-US,en;q=3D0.9,id;q=3D0.8'
+    'HTTP_COOKIE' =3D>
+'_identity-ba=
+ckend=3D98d6c9df3948d1468a8904a0d8cdd7fd26524192d065c4e39451687c829c40d0a%3=
+A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1=
+%2C%22RFzKABj8mwjU92eSYfjb6AXmJHPGrh7z%22%2C2592000%5D%22%3B%7D;
+_identit=
+y=3D256ff3f8018fcd34a52434126e0c82469da48ff68d01216cec01f7ca7f9d4d98a%3A2%3=
+A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A28%3A%22%5B%22100%22%2C%2=
+2test100key%22%2C2592000%5D%22%3B%7D;
+advanced-backend=3Dj1velb12d2ft30t3=
+ojhef5fvjj;
+_csrf-backend=3D5445cddf62a9aa3174d16e2bc69767b919ba40ed57189=
+53526bc876d5a12a824a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%=
+3Bs%3A32%3A%22q-y_cOy02l9xSgx7VzyYPPaNySXX3wXF%22%3B%7D;
+PHPSESSID=3Dsa82=
+gtbsdhdlp0s1femc7ip6th'
+    'PATH' =3D> 'C:\\Program Files\\Common
+File=
+s\\Oracle\\Java\\javapath;C:\\Program Files\\Broadcom\\Broadcom
+802.11 Ne=
+twork
+Adapter;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wb=
+em;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\=
+OpenSSH\\;C:\\Program
+Files\\Git\\cmd;C:\\Users\\hp\\AppData\\Local\\Micr=
+osoft\\WindowsApps;C:\\Users\\hp\\AppData\\Local\\Programs\\Microsoft
+VS=
+
+Code\\bin;C:\\xampp\\php;C:\\Users\\hp\\AppData\\Local\\ComposerSetup\\b=
+in;C:\\Users\\hp\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\ProgramData\\=
+hp\\GitHubDesktop\\bin;C:\\Users\\hp\\AppData\\Local\\GitHubDesktop\\bin'=
+
+    'SystemRoot' =3D> 'C:\\WINDOWS'
+    'COMSPEC' =3D> 'C:\\WINDOWS\\s=
+ystem32\\cmd.exe'
+    'PATHEXT' =3D>
+'.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS=
+;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' =3D> 'C:\\WINDOWS'
+    'SERVER_SIGNA=
+TURE' =3D> '<address>Apache/2.4.48 (Win64)
+OpenSSL/1.1.1l PHP/7.3.30 Serv=
+er at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' =3D> 'Apache/=
+2.4.48 (Win64) OpenSSL/1.1.1l
+PHP/7.3.30'
+    'SERVER_NAME' =3D> 'local=
+host'
+    'SERVER_ADDR' =3D> '::1'
+    'SERVER_PORT' =3D> '80'
+    'R=
+EMOTE_ADDR' =3D> '::1'
+    'DOCUMENT_ROOT' =3D> 'C:/xampp/htdocs'
+    '=
+REQUEST_SCHEME' =3D> 'http'
+    'CONTEXT_PREFIX' =3D> ''
+    'CONTEXT_D=
+OCUMENT_ROOT' =3D> 'C:/xampp/htdocs'
+    'SERVER_ADMIN' =3D> 'postmaster@=
+localhost'
+    'SCRIPT_FILENAME' =3D>
+'C:/xampp/htdocs/banking/backend/=
+web/index.php'
+    'REMOTE_PORT' =3D> '55102'
+    'GATEWAY_INTERFACE' =
+=3D> 'CGI/1.1'
+    'SERVER_PROTOCOL' =3D> 'HTTP/1.1'
+    'REQUEST_METHO=
+D' =3D> 'GET'
+    'QUERY_STRING' =3D>
+'MenuNavigasiSearch%5Bnama_menu%5=
+D=3Dbank&MenuNavigasiSearch%5Burl%5D=3D&MenuNavigasiSearch%5Bno_urut%5D=3D&=
+MenuNavigasiSearch%5Bicon%5D=3D&MenuNavigasiSearch%5Bstatus%5D=3D0&r=3Dmenu=
+-navigasi'
+    'REQUEST_URI' =3D>
+'/banking/backend/web/index.php?MenuN=
+avigasiSearch%5Bnama_menu%5D=3Dbank&MenuNavigasiSearch%5Burl%5D=3D&MenuNavi=
+gasiSearch%5Bno_urut%5D=3D&MenuNavigasiSearch%5Bicon%5D=3D&MenuNavigasiSear=
+ch%5Bstatus%5D=3D0&r=3Dmenu-navigasi'
+    'SCRIPT_NAME' =3D> '/banking/ba=
+ckend/web/index.php'
+    'PHP_SELF' =3D> '/banking/backend/web/index.php'=
+
+    'REQUEST_TIME_FLOAT' =3D> 1637206433.0949
+    'REQUEST_TIME' =3D> =
+1637206433
+]

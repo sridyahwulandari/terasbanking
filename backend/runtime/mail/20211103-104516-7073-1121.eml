@@ -1,0 +1,316 @@
+Message-ID: <adaea43acf3589056d2a6b809596c7c7@localhost>
+Date: Wed, 03 Nov 2021 10:45:16 +0700
+Subject: Database errors at example.com
+From: log@example.com
+To: admin@example.com, developer@example.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+2021-11-03 10:45:15
+[::1][2][jnm4d1ecqcj9ueca913eecj99r][error][yii\db\Ex=
+ception]
+PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown co=
+lumn
+'member_request' in 'where clause' in
+C:\wamp64\www\bookingfutsal\=
+vendor\yiisoft\yii2\db\Command.php:1299
+Stack trace:
+#0
+C:\wamp64\www=
+\bookingfutsal\vendor\yiisoft\yii2\db\Command.php(1299):
+PDOStatement->ex=
+ecute()
+#1
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\db\Command.p=
+hp(1165):
+yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2
+C:=
+\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\db\Command.php(433):
+yii\db=
+\Command->queryInternal('fetchColumn', 0)
+#3 C:\wamp64\www\bookingfutsal\=
+vendor\yiisoft\yii2\db\Query.php(494):
+yii\db\Command->queryScalar()
+#4=
+
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\db\ActiveQuery.php(352):=
+
+yii\db\Query->queryScalar('COUNT(*)', Object(yii\db\Connection))
+#5 C:=
+\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\db\Query.php(366):
+yii\db\A=
+ctiveQuery->queryScalar('COUNT(*)', Object(yii\db\Connection))
+#6
+C:\wa=
+mp64\www\bookingfutsal\backend\controllers\SiteController.php(88):
+yii\db=
+\Query->count()
+#7 [internal function]:
+backend\controllers\SiteControl=
+ler->actionIndex()
+#8
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\b=
+ase\InlineAction.php(57):
+call_user_func_array(Array, Array)
+#9
+C:\wa=
+mp64\www\bookingfutsal\vendor\yiisoft\yii2\base\Controller.php(181):
+yii\=
+base\InlineAction->runWithParams(Array)
+#10
+C:\wamp64\www\bookingfutsal=
+\vendor\yiisoft\yii2\base\Module.php(528):
+yii\base\Controller->runAction=
+('', Array)
+#11
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\web\App=
+lication.php(104):
+yii\base\Module->runAction('', Array)
+#12
+C:\wamp6=
+4\www\bookingfutsal\vendor\yiisoft\yii2\base\Application.php(392):
+yii\we=
+b\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\b=
+ookingfutsal\backend\web\index.php(23):
+yii\base\Application->run()
+#14=
+ {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054=
+ Unknown
+column 'member_request' in 'where clause'
+The SQL being execut=
+ed was: SELECT COUNT(*) FROM `tbl_pelanggan` WHERE
+`member_request`=3D're=
+quest' in
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\db\Schema.php:6=
+78
+Stack trace:
+#0
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\db=
+\Command.php(1304):
+yii\db\Schema->convertException(Object(PDOException),=
+ 'SELECT
+COUNT(*)...')
+#1
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\=
+yii2\db\Command.php(1165):
+yii\db\Command->internalExecute('SELECT COUNT(=
+*)...')
+#2
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\db\Command.p=
+hp(433):
+yii\db\Command->queryInternal('fetchColumn', 0)
+#3 C:\wamp64\w=
+ww\bookingfutsal\vendor\yiisoft\yii2\db\Query.php(494):
+yii\db\Command->q=
+ueryScalar()
+#4
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\db\Acti=
+veQuery.php(352):
+yii\db\Query->queryScalar('COUNT(*)', Object(yii\db\Con=
+nection))
+#5 C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\db\Query.php=
+(366):
+yii\db\ActiveQuery->queryScalar('COUNT(*)', Object(yii\db\Connecti=
+on))
+#6
+C:\wamp64\www\bookingfutsal\backend\controllers\SiteController.=
+php(88):
+yii\db\Query->count()
+#7 [internal function]:
+backend\contro=
+llers\SiteController->actionIndex()
+#8
+C:\wamp64\www\bookingfutsal\vend=
+or\yiisoft\yii2\base\InlineAction.php(57):
+call_user_func_array(Array, Ar=
+ray)
+#9
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\base\Controller=
+.php(181):
+yii\base\InlineAction->runWithParams(Array)
+#10
+C:\wamp64\=
+www\bookingfutsal\vendor\yiisoft\yii2\base\Module.php(528):
+yii\base\Cont=
+roller->runAction('', Array)
+#11
+C:\wamp64\www\bookingfutsal\vendor\yii=
+soft\yii2\web\Application.php(104):
+yii\base\Module->runAction('', Array)=
+
+#12
+C:\wamp64\www\bookingfutsal\vendor\yiisoft\yii2\base\Application.p=
+hp(392):
+yii\web\Application->handleRequest(Object(yii\web\Request))
+#1=
+3 C:\wamp64\www\bookingfutsal\backend\web\index.php(23):
+yii\base\Applica=
+tion->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] =3D> 42S22
+    [1] =3D> 1054
+    [2] =3D> Unknown c=
+olumn 'member_request' in 'where clause'
+)
+
+2021-11-03 10:45:15
+[::=
+1][2][jnm4d1ecqcj9ueca913eecj99r][info][application] $_GET =3D []
+
+$_PO=
+ST =3D []
+
+$_FILES =3D []
+
+$_COOKIE =3D [
+    '_xsrf' =3D>
+'2|7=
+52854b0|9e2b8b17c0c3b2efd4b8daec6cc7d8de|1634522046'
+    'username-localh=
+ost-8888' =3D>
+'\"2|1:0|10:1635864117|23:username-localhost-8888|44:NDE5O=
+WRlNDAwMGM0NDY0MWJhMDhhYTI3MzdkNmM0Y2I=3D|a63cec2b240b6044038916ce06a911a52=
+c01b096ee0a8c1000d24685c0695b9e\"'
+    'advanced-backend' =3D> 'jnm4d1ecq=
+cj9ueca913eecj99r'
+    '_csrf-backend' =3D>
+'6fd0104508f070202032e8f0e0=
+e6f3f0bc6d9ab2886e883d061205d49d255f0aa:2:{i:0;s:13:\"_csrf-backend\";i:1;s=
+:32:\"w3XFWqgfH1A4CjIoPO5_bvBER8FP45QZ\";}'
+]
+
+$_SESSION =3D [
+    =
+'__flash' =3D> []
+    'user_role' =3D> [
+        0 =3D> 'DEVELOPER'
+ =
+   ]
+    'user_role_id' =3D> [
+        0 =3D> 2
+    ]
+    '__id' =
+=3D> 2
+]
+
+$_SERVER =3D [
+    'HTTP_HOST' =3D> 'localhost:8081'
+  =
+  'HTTP_CONNECTION' =3D> 'keep-alive'
+    'HTTP_CACHE_CONTROL' =3D> 'max-=
+age=3D0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' =3D> '1'
+    'HTTP_DNT' =
+=3D> '1'
+    'HTTP_USER_AGENT' =3D> 'Mozilla/5.0 (Windows NT 10.0; Win64;=
+ x64)
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54
+Safari=
+/537.36 Edg/95.0.1020.40'
+    'HTTP_ACCEPT' =3D>
+'text/html,application=
+/xhtml+xml,application/xml;q=3D0.9,image/webp,image/apng,*/*;q=3D0.8,applic=
+ation/signed-exchange;v=3Db3;q=3D0.9'
+    'HTTP_SEC_FETCH_SITE' =3D> 'sam=
+e-origin'
+    'HTTP_SEC_FETCH_MODE' =3D> 'navigate'
+    'HTTP_SEC_FETCH=
+_USER' =3D> '?1'
+    'HTTP_SEC_FETCH_DEST' =3D> 'document'
+    'HTTP_SE=
+C_CH_UA' =3D> '\"Microsoft Edge\";v=3D\"95\",
+\"Chromium\";v=3D\"95\", \"=
+;Not A Brand\";v=3D\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' =3D> '?0'
+    'H=
+TTP_SEC_CH_UA_PLATFORM' =3D> '\"Windows\"'
+    'HTTP_REFERER' =3D>
+'htt=
+p://localhost:8081/bookingfutsal/backend/web/index.php?r=3Dsite%2Flogin'
+=
+    'HTTP_ACCEPT_ENCODING' =3D> 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANG=
+UAGE' =3D> 'en-US,en;q=3D0.9,id;q=3D0.8,ms;q=3D0.7'
+    'HTTP_COOKIE' =3D=
+>
+'_xsrf=3D2|752854b0|9e2b8b17c0c3b2efd4b8daec6cc7d8de|1634522046;
+user=
+name-localhost-8888=3D\"2|1:0|10:1635864117|23:username-localhost-8888|44:N=
+DE5OWRlNDAwMGM0NDY0MWJhMDhhYTI3MzdkNmM0Y2I=3D|a63cec2b240b6044038916ce06a91=
+1a52c01b096ee0a8c1000d24685c0695b9e\";
+advanced-backend=3Djnm4d1ecqcj9uec=
+a913eecj99r;
+_csrf-backend=3D6fd0104508f070202032e8f0e0e6f3f0bc6d9ab2886e=
+883d061205d49d255f0aa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1=
+%3Bs%3A32%3A%22w3XFWqgfH1A4CjIoPO5_bvBER8FP45QZ%22%3B%7D'
+    'PATH' =3D>=
+
+'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDO=
+WS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:=
+\\Program
+Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program
+Files=
+\\Microsoft\\Web Platform
+Installer\\;C:\\wamp64\\bin\\php\\php7.4.9;C:\\=
+ProgramData\\ComposerSetup\\bin;C:\\Program
+Files (x86)\\Calibre2\\;C:\\P=
+rogram
+Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDeskt=
+op\\version-bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Loca=
+l\\Microsoft\\WindowsApps'
+    'SystemRoot' =3D> 'C:\\WINDOWS'
+    'COM=
+SPEC' =3D> 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' =3D>
+'.COM;.E=
+XE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' =3D> 'C:\\WI=
+NDOWS'
+    'SERVER_SIGNATURE' =3D> '<address>Apache/2.4.46 (Win64) PHP/7.=
+4.9
+Server at localhost Port 8081</address>
+'
+    'SERVER_SOFTWARE' =
+=3D> 'Apache/2.4.46 (Win64) PHP/7.4.9'
+    'SERVER_NAME' =3D> 'localhost'=
+
+    'SERVER_ADDR' =3D> '::1'
+    'SERVER_PORT' =3D> '8081'
+    'REMO=
+TE_ADDR' =3D> '::1'
+    'DOCUMENT_ROOT' =3D> 'C:/wamp64/www'
+    'REQUE=
+ST_SCHEME' =3D> 'http'
+    'CONTEXT_PREFIX' =3D> ''
+    'CONTEXT_DOCUME=
+NT_ROOT' =3D> 'C:/wamp64/www'
+    'SERVER_ADMIN' =3D> 'wampserver@wampser=
+ver.invalid'
+    'SCRIPT_FILENAME' =3D>
+'C:/wamp64/www/bookingfutsal/ba=
+ckend/web/index.php'
+    'REMOTE_PORT' =3D> '54293'
+    'GATEWAY_INTERF=
+ACE' =3D> 'CGI/1.1'
+    'SERVER_PROTOCOL' =3D> 'HTTP/1.1'
+    'REQUEST_=
+METHOD' =3D> 'GET'
+    'QUERY_STRING' =3D> ''
+    'REQUEST_URI' =3D> '/=
+bookingfutsal/backend/web/index.php'
+    'SCRIPT_NAME' =3D> '/bookingfuts=
+al/backend/web/index.php'
+    'PHP_SELF' =3D> '/bookingfutsal/backend/web=
+/index.php'
+    'REQUEST_TIME_FLOAT' =3D> 1635911115.2679
+    'REQUEST_=
+TIME' =3D> 1635911115
+]
